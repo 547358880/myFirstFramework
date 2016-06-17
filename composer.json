@@ -1,5 +1,19 @@
 {
-  "autoload": {
-    "psr-4": {"App\\": "src/"}
-  }
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    },
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Cake\\": "lib/"
+        },
+        "files": [
+            "lib/Core/functions.php"
+        ]
+    }
 }

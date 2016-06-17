@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Cake\\' => array($baseDir . '/lib'),
     'App\\' => array($baseDir . '/src'),
 );
