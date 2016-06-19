@@ -22,7 +22,7 @@ define('TMP', ROOT . DS . 'tmp' . DS);
 
 define('LOGS', ROOT . DS . 'logs' . DS);
 
-define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'vendor' . DS . 'cakephp' . DS . 'cakephp');
+define('CAKE_CORE_INCLUDE_PATH', ROOT . DS . 'lib');
 
 define('CORE_PATH', CAKE_CORE_INCLUDE_PATH . DS);
 define('CAKE', CORE_PATH . 'src' . DS);

@@ -106,4 +106,19 @@ class Configure
         }
         return static::$engines[$config];
     }
+
+    public static function consume($var)
+    {
+        if (strpos($var, '.') === false) {
+            if (!isset(static::$values[$var])) {
+                return null;
+            }
+            $value = static::$values[$var];
+            unset(static::$values[$var]);
+            return $value;
+        }
+        $value = Hash::get(static::$values, $var);
+        static::delete($var);
+        return $value;
+    }
 }

@@ -19,10 +19,15 @@ if (!extension_loaded('mbstring')) {
 require __DIR__ . '/paths.php';
 
 require ROOT . DS . 'vendor' . DS . 'autoload.php';
+//echo CORE_PATH;
+//require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
+use Cake\Core\App;
 use Cake\Core\Configure;
 use Cake\Core\Configure\Engine\PhpConfig;
 use Cake\Error\ErrorHandler;
+use Cake\Datasource\ConnectionManager;
+use Cake\Routing\DispatcherFactory;
 
 try {
     Configure::config('default', new PhpConfig());          //主要用户读取config目录
@@ -54,4 +59,13 @@ if (!Configure::read('App.fullBaseUrl')) {
     }
     unset($httpHost, $s);
 }
+
+//初始化类
+//ConnectionManager::config(Configure::consume('Datasources'));
+
+/*
+ * middleware/dispatcher filters
+ */
+DispatcherFactory::add('Routing');
+
 ?>

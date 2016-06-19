@@ -61,7 +61,7 @@ abstract class BaseErrorHandler
      */
     public function handleError($errno, $errstr, $errfile = null, $errline = null, $context = null)
     {
-        echo $errno;
+        echo $errno . '-----' . $errstr . '-----' .  $errfile . '------' . $errline;
         if (error_reporting() === 0) {
             return false;
         }
